@@ -24,15 +24,15 @@ const NOTICES = [
     body: 'The weekly class routine for both Section A and Section B is now available. Please check the Routine section for the detailed schedule.',
     category: 'Academic',
     date: '2026-04-08',
-    driveLink: ''
+    driveLink: 'https://drive.google.com/file/d/1ZA5XqfVo-0C40YV7KArCWx6tVJMy9nwO/view?usp=sharing'
   },
-  // {
-  //   title: 'Class Routine Effective from Aprl 12, 2026',
-  //   body: 'The weekly class routine for both Section A and Section B is now available. Please check the Routine section for the detailed schedule.',
-  //   category: 'Academic',
-  //   date: '2026-04-08',
-  //   driveLink: ''
-  // }
+  {
+    title: 'Course Details',
+    body: 'Course details for 2026',
+    category: 'Academic',
+    date: '2026-04-08',
+    driveLink: 'https://drive.google.com/file/d/1ZA5XqfVo-0C40YV7KArCWx6tVJMy9nwO/view?usp=sharing'
+  }
 ];
 
 /* ─── PHOTOS DATA ───────────────────────────────────────────────

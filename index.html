@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bankfinity 32 | Department of Banking & Insurance, University of Dhaka</title>
+  <meta name="description" content="Official website of Bankfinity 32 – BBA 32nd Batch, Department of Banking and Insurance, University of Dhaka. Session 2025–2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────────────── -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-logo">B32</span>
+        <div>
+          <span class="brand-name">Bankfinity 32</span>
+          <span class="brand-sub">Banking &amp; Insurance · University of Dhaka</span>
+        </div>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#notices">Notices</a>
+        <a href="#schedule">Routine</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── HERO ──────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="container hero-content">
+      <p class="hero-tag">Department of Banking &amp; Insurance · Session 2025–2026</p>
+      <h1 class="hero-title">Bankfinity<span class="accent"> 32</span></h1>
+      <p class="hero-desc">BBA 32nd Batch &mdash; University of Dhaka<br>
+        Building the bankers and insurers of tomorrow.</p>
+      <div class="hero-cta">
+        <a href="#notices" class="btn btn-dark">View Notices</a>
+        <a href="#schedule" class="btn btn-outline">Class Routine</a>
+      </div>
+    </div>
+    <div class="hero-divider"></div>
+  </section>
+
+  <!-- ─── STATS STRIP ──────────────────────────────────────────── -->
+  <section class="stats-strip">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">32nd</span>
+        <span class="stat-label">Batch</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Courses</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">4</span>
+        <span class="stat-label">Faculty</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Sections</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── NOTICE BOARD ─────────────────────────────────────────── -->
+  <section class="section" id="notices">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Notice Board</h2>
+        <p class="section-sub">Important announcements, circulars, and academic notices</p>
+      </div>
+
+
+      <div class="notice-list" id="noticeList">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CLASS ROUTINE ─────────────────────────────────────────── -->
+  <section class="section section-alt" id="schedule">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Weekly Class Routine</h2>
+        <p class="section-sub">Effective from April 12, 2026 &mdash; Session 2025–2026</p>
+      </div>
+
+      <div class="section-tabs">
+        <button class="tab-btn active" data-section="A">Section A</button>
+        <button class="tab-btn" data-section="B">Section B</button>
+        <button class="tab-btn" data-section="both">Both Sections</button>
+      </div>
+
+      <div class="table-scroll">
+        <table class="routine-table" id="routineTable">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>09:00 – 10:20</th>
+              <th>10:30 – 11:50</th>
+              <th>12:00 – 01:20</th>
+              <th>02:00 – 03:20</th>
+              <th>03:30 – 04:50</th>
+            </tr>
+          </thead>
+          <tbody id="routineBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Teacher Legend -->
+      <div class="teacher-legend">
+        <h3 class="legend-title">Faculty Key</h3>
+        <div class="legend-grid">
+          <div class="legend-item"><span class="legend-code">JUP</span><span class="legend-name">Dr. Md. Jahir Uddin Palas</span><span class="legend-designation">Associate Professor</span></div>
+          <div class="legend-item"><span class="legend-code">JR</span><span class="legend-name">Md. Johir Rayhan</span><span class="legend-designation">Lecturer</span></div>
+          <div class="legend-item"><span class="legend-code">MAI</span><span class="legend-name">Mohammad Ariful Islam</span><span class="legend-designation">Associate Professor</span></div>
+          <div class="legend-item"><span class="legend-code">AN</span><span class="legend-name">Md. Asif Nawaz</span><span class="legend-designation">Assistant Professor</span></div>
+          <div class="legend-item"><span class="legend-code">AAM</span><span class="legend-name">Prof. Dr. Abdullah Al Mahmud</span><span class="legend-designation">Professor</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUBJECT LIST ──────────────────────────────────────────── -->
+  <section class="section" id="subjects">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Courses &amp; Subjects</h2>
+        <p class="section-sub">1st Year BBA curriculum for Batch 32</p>
+      </div>
+      <div class="table-scroll">
+        <table class="subject-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Course Title</th>
+              <th>Faculty</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="course-code">B-101</span></td>
+              <td>Principles and Practices of Banking</td>
+              <td>JUP (Sec A) &bull; JR (Sec B)</td>
+            </tr>
+            <tr>
+              <td><span class="course-code">B-102</span></td>
+              <td>Business Communication</td>
+              <td>MAI</td>
+            </tr>
+            <tr>
+              <td><span class="course-code">B-103</span></td>
+              <td>Business and Technology</td>
+              <td>AN</td>
+            </tr>
+            <tr>
+              <td><span class="course-code">B-104</span></td>
+              <td>Financial Accounting</td>
+              <td>AAM</td>
+            </tr>
+            <tr>
+              <td><span class="course-code">B-105</span></td>
+              <td>Bangladesh Studies</td>
+              <td>TBA</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ───────────────────────────────────────────────── -->
+  <section class="section section-alt" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Photo Gallery</h2>
+        <p class="section-sub">Memories from Bankfinity 32</p>
+      </div>
+
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="All">All</button>
+        <button class="filter-btn" data-filter="Campus">Campus</button>
+        <button class="filter-btn" data-filter="Events">Events</button>
+        <button class="filter-btn" data-filter="Class">Class</button>
+        <button class="filter-btn" data-filter="Outing">Outing</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="gallery-empty hidden" id="galleryEmpty">
+        <p>No photos yet — be the first to share a memory!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LIGHTBOX ─────────────────────────────────────────────── -->
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-nav prev" id="lightboxPrev">&#8592;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <p class="lightbox-caption" id="lightboxCaption"></p>
+    <button class="lightbox-nav next" id="lightboxNext">&#8594;</button>
+  </div>
+
+  <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">About Bankfinity 32</h2>
+        <p class="section-sub">Who we are</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎓</div>
+          <h3>Our Batch</h3>
+          <p>We are the 32nd batch of the Department of Banking and Insurance at the University of Dhaka — one of the most prestigious departments in Bangladesh, producing finance leaders since its founding.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🏛️</div>
+          <h3>Our Department</h3>
+          <p>The Department of Banking and Insurance offers a rigorous BBA program grounded in financial theory, banking practice, and insurance law. It operates under the Faculty of Business Studies, University of Dhaka.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">🌟</div>
+          <h3>Bankfinity</h3>
+          <p>"Bankfinity" — where banking meets infinity. Our batch identity reflects our ambition: limitless potential in the world of finance, banking, and insurance. Together, we grow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────────────────────────── -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Contact &amp; Links</h2>
+        <p class="section-sub">Reach the batch representatives</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <h3>Department</h3>
+          <p>Department of Banking and Insurance<br>Faculty of Business Studies<br>University of Dhaka<br>Dhaka – 1000, Bangladesh</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🌐</div>
+          <h3>This Website</h3>
+          <p><a href="https://bankfinity32.pro.bd" class="link">bankfinity32.pro.bd</a></p>
+          <p class="small muted">Hosted for Bankfinity 32, DU BBA Session 2025–2026</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📅</div>
+          <h3>Session</h3>
+          <p>2025 – 2026<br>Batch: 32nd<br>Sections: A &amp; B</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo small">B32</span>
+        <span>Bankfinity 32</span>
+      </div>
+      <p class="footer-copy">&copy; 2025–2026 Bankfinity 32 &mdash; Department of Banking &amp; Insurance, University of Dhaka. All rights reserved.</p>
+      <a href="#top" class="footer-top">Back to top &uarr;</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

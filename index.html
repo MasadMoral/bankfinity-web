@@ -22,9 +22,14 @@
           <span class="brand-sub">Banking &amp; Insurance · University of Dhaka</span>
         </div>
       </div>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="mode-icon">🌓</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
       <nav class="main-nav" id="mainNav">
         <a href="#notices">Notices</a>
         <a href="#schedule">Routine</a>
@@ -48,7 +53,7 @@
         <a href="#schedule" class="btn btn-outline">Class Routine</a>
       </div>
     </div>
-    <div class="hero-divider"></div>
+    </div>
   </section>
 
   <!-- ─── STATS STRIP ──────────────────────────────────────────── -->
@@ -97,9 +102,9 @@
       </div>
 
       <div class="section-tabs">
-        <button class="tab-btn active" data-section="A">Section A</button>
+        <button class="tab-btn active" data-section="both">Both Sections</button>
+        <button class="tab-btn" data-section="A">Section A</button>
         <button class="tab-btn" data-section="B">Section B</button>
-        <button class="tab-btn" data-section="both">Both Sections</button>
       </div>
 
       <div class="table-scroll">
@@ -118,6 +123,10 @@
             <!-- Populated by JS -->
           </tbody>
         </table>
+      </div>
+
+      <div class="routine-mobile" id="routineMobile">
+        <!-- Populated by JS -->
       </div>
 
       <!-- Teacher Legend -->

@@ -119,11 +119,32 @@ function formatDate(iso) {
   };
 }
 
+/* ─── THEME TOGGLE ─────────────────────────────────────────── */
+const themeToggle = document.getElementById('themeToggle');
+const htmlEl = document.documentElement;
+
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+htmlEl.setAttribute('data-theme', savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlEl.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  htmlEl.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+
 /* ─── NAV TOGGLE ────────────────────────────────────────────── */
 const navToggle = document.getElementById('navToggle');
 const mainNav = document.getElementById('mainNav');
-navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
-mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainNav.classList.remove('open')));
+navToggle.addEventListener('click', () => {
+  navToggle.classList.toggle('open');
+  mainNav.classList.toggle('open');
+});
+mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navToggle.classList.remove('open');
+  mainNav.classList.remove('open');
+}));
 
 /* ─── NOTICES ───────────────────────────────────────────────── */
 function renderNotices() {
@@ -160,6 +181,14 @@ function renderNotices() {
 }
 
 /* ─── ROUTINE ───────────────────────────────────────────────── */
+const SLOT_TIMES = [
+  '09:00 – 10:20',
+  '10:30 – 11:50',
+  '12:00 – 01:20',
+  '02:00 – 03:20',
+  '03:30 – 04:50'
+];
+
 function classCell(slot) {
   return `
     <span class="class-code">${slot.code} <span class="sec-badge sec-${slot.section}">${slot.section}</span></span>
@@ -170,6 +199,9 @@ function classCell(slot) {
 
 function renderRoutine(section) {
   const body = document.getElementById('routineBody');
+  const mobileContainer = document.getElementById('routineMobile');
+  
+  // Desktop Table
   body.innerHTML = ROUTINE_DATA.map(row => {
     const dayCells = row.slots.map(slot => {
       if (!slot) return '<td></td>';
@@ -191,6 +223,42 @@ function renderRoutine(section) {
       return `<td class="class-cell">${classCell(slot)}</td>`;
     }).join('');
     return `<tr><td>${row.day}</td>${dayCells}</tr>`;
+  }).join('');
+
+  // Mobile Cards
+  mobileContainer.innerHTML = ROUTINE_DATA.map(row => {
+    const slotsHtml = row.slots.map((slot, idx) => {
+      let content = '';
+      if (!slot) {
+        content = '<div class="slot-content empty">No class</div>';
+      } else if (Array.isArray(slot)) {
+        const visible = section === 'both' ? slot : slot.filter(s => s.section === section);
+        if (!visible.length) {
+          content = '<div class="slot-content empty">No class</div>';
+        } else {
+          content = `<div class="slot-content">${visible.map((s, i) => (i > 0 ? '<hr class="slot-divider">' : '') + classCell(s)).join('')}</div>`;
+        }
+      } else {
+        if (section !== 'both' && slot.section !== section) {
+          content = '<div class="slot-content empty">No class</div>';
+        } else {
+          content = `<div class="slot-content">${classCell(slot)}</div>`;
+        }
+      }
+      return `
+        <div class="mobile-slot">
+          <div class="slot-time">${SLOT_TIMES[idx]}</div>
+          ${content}
+        </div>
+      `;
+    }).join('');
+
+    return `
+      <div class="day-group">
+        <div class="day-header">${row.day}</div>
+        <div class="day-slots">${slotsHtml}</div>
+      </div>
+    `;
   }).join('');
 }
 

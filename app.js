@@ -24,7 +24,7 @@ const NOTICES = [
     body: 'The weekly class routine for both Section A and Section B is now available. Please check the Routine section for the detailed schedule.',
     category: 'Academic',
     date: '2026-04-08',
-    driveLink: 'bankfinity32.pro.bd/#notices'
+    driveLink: ''
   }
 ];
 

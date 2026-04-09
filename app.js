@@ -13,11 +13,18 @@
    ─────────────────────────────────────────────────────────── */
 const NOTICES = [
   {
-    title: 'Section A and B student lists will be published today',
+    title: 'Section A',
     body: '',
     category: 'General',
     date: '2026-04-09',
-    driveLink: ''
+    driveLink: 'https://drive.google.com/file/d/1owpEeNSed_zhbwlLKgOoOUJ0HeSOVU9Y/view?usp=drive_link'
+  },
+  {
+    title: 'Section B',
+    body: '',
+    category: 'General',
+    date: '2026-04-09',
+    driveLink: 'https://drive.google.com/file/d/15aX0o6kbIuzqc4Ey5wxWm30fLFQ7D8Nn/view?usp=drive_link'
   },
   {
     title: 'Class Routine Effective from April 12, 2026',

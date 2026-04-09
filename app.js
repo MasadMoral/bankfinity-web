@@ -13,10 +13,10 @@
    ─────────────────────────────────────────────────────────── */
 const NOTICES = [
   {
-    title: 'Welcome to Bankfinity 32 — Session 2025–2026 begins!',
-    body: 'Dear batch members, welcome to the website of Bankfinity 32. All important notices, class schedules, and updates will be found here.',
+    title: 'Section A and B student lists will be published today',
+    body: '',
     category: 'General',
-    date: '2026-04-08',
+    date: '2026-04-09',
     driveLink: ''
   },
   {

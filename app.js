@@ -14,7 +14,7 @@
 const NOTICES = [
   {
     title: 'Welcome to Bankfinity 32 — Session 2025–2026 begins!',
-    body: 'Dear batch members, welcome to the official website of Bankfinity 32. All important notices, class schedules, and updates will be found here.',
+    body: 'Dear batch members, welcome to the website of Bankfinity 32. All important notices, class schedules, and updates will be found here.',
     category: 'General',
     date: '2026-04-08',
     driveLink: ''
@@ -24,7 +24,7 @@ const NOTICES = [
     body: 'The weekly class routine for both Section A and Section B is now available. Please check the Routine section for the detailed schedule.',
     category: 'Academic',
     date: '2026-04-08',
-    driveLink: ''
+    driveLink: 'bankfinity32.pro.bd/#notices'
   }
 ];
 

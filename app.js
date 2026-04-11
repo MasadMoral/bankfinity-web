@@ -116,6 +116,7 @@ const ROUTINE_DATA = [
 let activeSection = 'both';
 let activeFilter = 'All';
 let lightboxIndex = 0;
+let showAllNotices = false;
 
 /* ─── UTILS ─────────────────────────────────────────────────── */
 function formatDate(iso) {
@@ -156,13 +157,19 @@ mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
 /* ─── NOTICES ───────────────────────────────────────────────── */
 function renderNotices() {
   const list = document.getElementById('noticeList');
+  const container = document.getElementById('noticeViewMoreContainer');
+  const btn = document.getElementById('noticeToggleBtn');
+
   if (!NOTICES.length) {
     list.innerHTML = '<p style="color:var(--muted);padding:1.5rem 0;">No notices yet.</p>';
+    container.classList.add('hidden');
     return;
   }
-  list.innerHTML = NOTICES
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+  const sorted = NOTICES.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+  const visible = showAllNotices ? sorted : sorted.slice(0, 3);
+
+  list.innerHTML = visible
     .map(n => {
       const { day, month } = formatDate(n.date);
       return `
@@ -185,7 +192,24 @@ function renderNotices() {
       `;
     })
     .join('');
+
+  // Show/hide toggle button container
+  if (NOTICES.length <= 3) {
+    container.classList.add('hidden');
+  } else {
+    container.classList.remove('hidden');
+    btn.textContent = showAllNotices ? 'Show Less' : 'View More';
+  }
 }
+
+// Notice toggle event
+document.getElementById('noticeToggleBtn')?.addEventListener('click', () => {
+  showAllNotices = !showAllNotices;
+  renderNotices();
+  if (!showAllNotices) {
+    document.getElementById('notices').scrollIntoView({ behavior: 'smooth' });
+  }
+});
 
 /* ─── ROUTINE ───────────────────────────────────────────────── */
 const SLOT_TIMES = [

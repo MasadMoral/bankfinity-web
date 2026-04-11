@@ -220,6 +220,15 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--black); line-height
 }
 .notice-link:hover { opacity: 0.9; }
 
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+.view-more-btn {
+  min-width: 180px;
+}
+
 /* ─── ROUTINE TABLE / MOBILE VIEW ────────────────────────── */
 .section-tabs { display: flex; gap: .5rem; margin-bottom: 2rem; flex-wrap: wrap; justify-content: center; }
 .tab-btn {
@@ -295,28 +304,56 @@ h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--black); line-height
 }
 .gallery-item:hover .gallery-caption { opacity: 1; }
 
-/* ─── ABOUT & CONTACT ─────────────────────────────────────── */
-.about-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-.about-card, .contact-card {
-  padding: 2.5rem;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  transition: all 0.3s ease;
-}
-.about-card:hover, .contact-card:hover { border-color: var(--muted); transform: translateY(-4px); }
-.about-icon, .contact-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
-.about-card h3, .contact-card h3 { font-size: 1.3rem; margin-bottom: .75rem; }
-.about-card p, .contact-card p { font-size: 1rem; color: var(--muted); line-height: 1.8; }
 
 /* ─── FOOTER ──────────────────────────────────────────────── */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 4rem 0;
+  padding: 3rem 0;
   background: var(--bg);
 }
+
+.footer-contact-bar {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+}
+
+.contact-admin {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.contact-label {
+  color: var(--black);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.contact-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.contact-link:hover {
+  color: var(--black);
+}
+
+.divider {
+  color: var(--border);
+  user-select: none;
+}
+
 .footer-inner {
-  display: flex; align-items: start; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   gap: 2rem; flex-wrap: wrap;
 }
 .footer-brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; font-size: 1.1rem; }

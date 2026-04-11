@@ -35,8 +35,6 @@
         <a href="#schedule">Routine</a>
         <a href="#gallery">Gallery</a>
         <a href="#subjects">Subjects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -89,6 +87,10 @@
 
       <div class="notice-list" id="noticeList">
         <!-- Populated by JS -->
+      </div>
+
+      <div class="view-more-container" id="noticeViewMoreContainer">
+        <button class="btn btn-outline view-more-btn" id="noticeToggleBtn">View More</button>
       </div>
     </div>
   </section>
@@ -226,70 +228,26 @@
     <button class="lightbox-nav next" id="lightboxNext">&#8594;</button>
   </div>
 
-  <!-- ─── ABOUT ─────────────────────────────────────────────────── -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">About Bankfinity 32</h2>
-        <p class="section-sub">Who we are</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon">🎓</div>
-          <h3>Our Batch</h3>
-          <p>We are the 32nd batch of the Department of Banking and Insurance at the University of Dhaka — one of the most prestigious departments in Bangladesh, producing finance leaders since its founding.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🏛️</div>
-          <h3>Our Department</h3>
-          <p>The Department of Banking and Insurance offers a rigorous BBA program grounded in financial theory, banking practice, and insurance law. It operates under the Faculty of Business Studies, University of Dhaka.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">🌟</div>
-          <h3>Bankfinity</h3>
-          <p>"Bankfinity" — where banking meets infinity. Our batch identity reflects our ambition: limitless potential in the world of finance, banking, and insurance. Together, we grow.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ─── CONTACT ───────────────────────────────────────────────── -->
-  <section class="section section-alt" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Contact &amp; Links</h2>
-        <p class="section-sub">Reach the batch representatives</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon">📍</div>
-          <h3>Department</h3>
-          <p>Department of Banking and Insurance<br>Faculty of Business Studies<br>University of Dhaka<br>Dhaka – 1000, Bangladesh</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">🌐</div>
-          <h3>This Website</h3>
-          <p><a href="https://bankfinity32.pro.bd" class="link">bankfinity32.pro.bd</a></p>
-          <p class="small muted">Hosted for Bankfinity 32, DU BBA Session 2025–2026</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">📅</div>
-          <h3>Session</h3>
-          <p>2025 – 2026<br>Batch: 32nd<br>Sections: A &amp; B</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ─── FOOTER ────────────────────────────────────────────────── -->
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="brand-logo small">B32</span>
-        <span>Bankfinity 32</span>
+    <div class="container">
+      <div class="footer-contact-bar">
+        <div class="contact-admin">
+          <span class="contact-label">Contact Admin:</span>
+          <a href="mailto:masadmoral@hotmail.com" class="contact-link">masadmoral@hotmail.com</a>
+          <span class="divider">|</span>
+          <a href="https://facebook.com/MasadMoral" target="_blank" rel="noopener" class="contact-link">facebook.com/MasadMoral</a>
+        </div>
       </div>
-      <p class="footer-copy">&copy; 2025–2026 Bankfinity 32 &mdash; Department of Banking &amp; Insurance, University of Dhaka. All rights reserved.</p>
-      <a href="#top" class="footer-top">Back to top &uarr;</a>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="brand-logo small">B32</span>
+          <span>Bankfinity 32</span>
+        </div>
+        <p class="footer-copy">&copy; 2025–2026 Bankfinity 32 &mdash; Department of Banking &amp; Insurance, University of Dhaka. All rights reserved.</p>
+        <a href="#top" class="footer-top">Back to top &uarr;</a>
+      </div>
     </div>
   </footer>
 

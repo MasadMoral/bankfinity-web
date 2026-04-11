@@ -32,6 +32,7 @@
       </div>
       <nav class="main-nav" id="mainNav">
         <a href="#notices">Notices</a>
+        <a href="#detector">Detector</a>
         <a href="#schedule">Routine</a>
         <a href="#gallery">Gallery</a>
         <a href="#subjects">Subjects</a>
@@ -91,6 +92,28 @@
 
       <div class="view-more-container" id="noticeViewMoreContainer">
         <button class="btn btn-outline view-more-btn" id="noticeToggleBtn">View More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION DETECTOR ──────────────────────────────────────── -->
+  <section class="section section-alt" id="detector">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Section Detector</h2>
+        <p class="section-sub">Quickly find out which section you are in based on your Roll/ID</p>
+      </div>
+      
+      <div class="detector-card">
+        <div class="detector-input-group">
+          <input type="number" id="rollInput" placeholder="Enter your roll number..." aria-label="Roll Number" />
+          <button class="btn btn-dark" id="detectBtn">Check Section</button>
+        </div>
+        <div id="detectorResult" class="detector-result hidden">
+          <p class="result-label">Your Section is:</p>
+          <div class="result-value">Section <span id="sectionValue"></span></div>
+          <p class="result-note" id="resultNote"></p>
+        </div>
       </div>
     </div>
   </section>

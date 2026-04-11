@@ -390,6 +390,45 @@ function escHtml(str) {
 }
 
 /* ─── INIT ──────────────────────────────────────────────────── */
+function initSectionDetector() {
+  const input = document.getElementById('rollInput');
+  const btn = document.getElementById('detectBtn');
+  const resultDiv = document.getElementById('detectorResult');
+  const sectionSpan = document.getElementById('sectionValue');
+  const noteP = document.getElementById('resultNote');
+
+  if (!btn || !input) return;
+
+  btn.addEventListener('click', () => {
+    const roll = parseInt(input.value);
+    
+    if (isNaN(roll)) {
+      alert('Please enter a valid roll number.');
+      return;
+    }
+
+    const section = roll % 2 === 0 ? 'A' : 'B';
+    const note = section === 'A' 
+      ? 'Even roll numbers are assigned to Section A.' 
+      : 'Odd roll numbers are assigned to Section B.';
+
+    sectionSpan.textContent = section;
+    noteP.textContent = note;
+    resultDiv.classList.remove('hidden');
+    
+    // Smooth scroll to result on mobile
+    if (window.innerWidth < 768) {
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  });
+
+  // Also trigger on Enter key
+  input.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') btn.click();
+  });
+}
+
 renderNotices();
 renderRoutine('both');
 renderGallery();
+initSectionDetector();

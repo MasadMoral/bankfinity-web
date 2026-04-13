@@ -110,6 +110,15 @@ const ROUTINE_DATA = [
   }
 ];
 
+/* ─── TEACHER FULL NAMES ────────────────────────────────────── */
+const TEACHERS = {
+  JUP:  'Jahir Uddin Palas',
+  MAI:  'Md. Ariful Islam',
+  AAM:  'Abdullah Al Mamun',
+  AN:   'Asif Nawaz',
+  MRAB: 'Muhammad Rashed Alam Bhuiyan',
+  JR:   'JR'   // update if known
+};
 
 
 /* ─── STATE ─────────────────────────────────────────────────── */
@@ -154,55 +163,25 @@ mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   mainNav.classList.remove('open');
 }));
 
-/* ─── NOTICES ───────────────────────────────────────────────── */
+/* ─── NOTICES — replaced with Join Groups message ───────────── */
 function renderNotices() {
   const list = document.getElementById('noticeList');
   const container = document.getElementById('noticeViewMoreContainer');
   const btn = document.getElementById('noticeToggleBtn');
 
-  if (!NOTICES.length) {
-    list.innerHTML = '<p style="color:var(--muted);padding:1.5rem 0;">No notices yet.</p>';
-    container.classList.add('hidden');
-    return;
+  if (list) {
+    list.innerHTML = `
+      <div class="join-groups-msg" style="padding:1.5rem 0; text-align:center;">
+        <p style="font-size:1.1rem; font-weight:600; margin-bottom:0.5rem;">📢 Join our groups for the latest notices</p>
+        <p style="color:var(--muted); font-size:0.95rem;">All updates, notices, and announcements are shared in the batch groups. Join to stay informed.</p>
+      </div>
+    `;
   }
 
-  const sorted = NOTICES.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
-  const visible = showAllNotices ? sorted : sorted.slice(0, 3);
-
-  list.innerHTML = visible
-    .map(n => {
-      const { day, month } = formatDate(n.date);
-      return `
-        <div class="notice-card">
-          <div class="notice-date-col">
-            <span class="notice-day">${day}</span>
-            <span class="notice-month">${month}</span>
-          </div>
-          <div class="notice-body">
-            <div class="notice-meta">
-              <span class="notice-badge">${n.category}</span>
-            </div>
-            <p class="notice-title-text">${escHtml(n.title)}</p>
-            ${n.body ? `<p class="notice-text">${escHtml(n.body)}</p>` : ''}
-            ${n.driveLink ? `<a class="notice-link" href="${escHtml(n.driveLink)}" target="_blank" rel="noopener">
-              📄 Open Document / PDF ↗
-            </a>` : ''}
-          </div>
-        </div>
-      `;
-    })
-    .join('');
-
-  // Show/hide toggle button container
-  if (NOTICES.length <= 3) {
-    container.classList.add('hidden');
-  } else {
-    container.classList.remove('hidden');
-    btn.textContent = showAllNotices ? 'Show Less' : 'View More';
-  }
+  if (container) container.classList.add('hidden');
 }
 
-// Notice toggle event
+// Notice toggle event (kept in case HTML still has the button)
 document.getElementById('noticeToggleBtn')?.addEventListener('click', () => {
   showAllNotices = !showAllNotices;
   renderNotices();

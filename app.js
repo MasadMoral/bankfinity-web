@@ -199,4 +199,6 @@ if (navToggle && mainNav) {
 }
 
 /* ─── INIT ──────────────────────────────────────────────────── */
-renderRoutine('both');
+document.addEventListener('DOMContentLoaded', () => {
+  renderRoutine('both');
+});
